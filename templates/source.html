@@ -88,7 +88,7 @@
 
   /* ============ SIDEBAR ============ */
   aside {
-    background: linear-gradient(180deg, #1a3a4a 0%, #0d1f2d 100%);
+    background: #eae7e0;
     padding: 11mm 7mm 8mm 11mm;
     box-sizing: border-box;
   }
@@ -105,14 +105,14 @@
     font-weight: 700;
     font-size: 20pt;
     letter-spacing: 1px;
-    color: #e8e4dc;
+    color: var(--ink);
   }
   aside h1 .last {
     display: inline;
     font-family: var(--mono);
     font-weight: 700;
     font-size: 20pt;
-    color: #e8e4dc;
+    color: var(--ink);
     margin-left: 1.5mm;
   }
   aside .role-tag {
@@ -121,8 +121,8 @@
     font-weight: 500;
     letter-spacing: 0.4px;
     color: var(--accent-soft);
-    background: #e8e4dc;
-    border: 0.5pt solid #b0c4d4;
+    background: #f5f3ed;
+    border: 0.5pt solid #d0d8e0;
     padding: 2mm 3mm;
     margin-top: 5mm;
     border-radius: 1.5mm;
@@ -145,18 +145,18 @@
     letter-spacing: 1.8px;
     text-transform: uppercase;
     margin: 6mm 0 2.2mm 0;
-    color: #b0c4d4;
-    border-bottom: 1px solid #1a4a60;
+    color: var(--accent-soft);
+    border-bottom: 1px solid #d0d8e0;
     padding-bottom: 1.2mm;
   }
   aside h2::before {
     content: "< ";
-    color: var(--lime);
+    color: var(--accent-soft);
     font-weight: 400;
   }
   aside h2::after {
     content: " />";
-    color: var(--lime);
+    color: var(--accent-soft);
     font-weight: 400;
   }
 
@@ -164,13 +164,13 @@
     display: block;
     font-family: var(--mono);
     font-size: 7.6pt;
-    color: #e8e4dc;
+    color: var(--ink);
     margin-bottom: 1.4mm;
     word-break: break-word;
   }
   aside .contact-line .label {
     display: inline;
-    color: var(--lime);
+    color: var(--accent-soft);
     margin-right: 0.5mm;
     vertical-align: middle;
   }
@@ -193,7 +193,7 @@
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1.2px;
-    color: var(--lime);
+    color: var(--accent-soft);
     margin-bottom: 1.4mm;
   }
   aside .skill-group ul {
@@ -205,9 +205,9 @@
     display: inline-block;
     font-size: 6.8pt;
     font-weight: 500;
-    background: linear-gradient(135deg, rgba(200, 230, 78, 0.18), rgba(26, 58, 74, 0.35));
-    border: 0.4pt solid rgba(200, 230, 78, 0.25);
-    color: #e8e4dc;
+    background: rgba(26, 58, 74, 0.08);
+    border: 0.4pt solid rgba(26, 58, 74, 0.25);
+    color: var(--ink);
     padding: 0.5mm 1.8mm;
     border-radius: 999px;
     margin: 0;
@@ -220,8 +220,8 @@
     margin-bottom: 3mm;
     line-height: 1.35;
   }
-  aside .cert strong { display: block; color: #e8e4dc; }
-  aside .cert span { color: #b0c4d4; font-size: 7pt; font-family: var(--mono); }
+  aside .cert strong { display: block; color: var(--ink); }
+  aside .cert span { color: var(--soft); font-size: 7pt; font-family: var(--mono); }
 
   aside .interests-group ul {
     display: flex;
@@ -232,9 +232,9 @@
     display: inline-block;
     font-size: 6.8pt;
     font-weight: 500;
-    background: linear-gradient(135deg, rgba(200, 230, 78, 0.18), rgba(26, 58, 74, 0.35));
-    border: 0.4pt solid rgba(200, 230, 78, 0.25);
-    color: #e8e4dc;
+    background: rgba(26, 58, 74, 0.08);
+    border: 0.4pt solid rgba(26, 58, 74, 0.25);
+    color: var(--ink);
     padding: 0.5mm 1.8mm;
     border-radius: 999px;
     margin: 0;
@@ -425,11 +425,11 @@
 
     <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> Contact</h2>
     <div class="contact-line">
-      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> London, UK</div>
-      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg> <a href="mailto:jane@example.com">jane@example.com</a></div>
-      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> <a class="plain" href="tel:+447700900000">+44 7700 900000</a></div>
-      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg> <a href="https://janedoe.dev">janedoe.dev</a></div>
-      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> <a href="https://linkedin.com/in/janedoe">janedoe</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> London, UK</div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg> <a href="mailto:jane@example.com">jane@example.com</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> <a class="plain" href="tel:+447700900000">+44 7700 900000</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg> <a href="https://janedoe.dev">janedoe.dev</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a4a" stroke-width="2.5" stroke-linecap="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> <a href="https://linkedin.com/in/janedoe">janedoe</a></div>
     </div>
 
     <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Capabilities</h2>
