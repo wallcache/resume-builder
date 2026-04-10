@@ -1,661 +1,570 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jane Doe: Senior Software Engineer</title>
-
-<!-- Google Fonts -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-<!-- Devicon CDN for brand logos -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
-
+<meta charset="utf-8" />
+<title>Jane Doe &middot; Senior Software Engineer</title>
 <style>
-/* ============================================================
-   THEME: Neptune + Lime
-   ============================================================ */
-:root {
-  --ink: #002233;
-  --soft: #3d5a6e;
-  --rule: #C0D6EA;
-  --accent-soft: #11425D;
-  --lime: #DDFF55;
-  --bg-page: #F6F2E8;
-  --bg-side-start: #11425D;
-  --bg-side-end: #002233;
-  --sidebar-text: #C0D6EA;
-  --sidebar-heading: #DDFF55;
-  --sidebar-width: 70mm;
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-body: 'Inter', sans-serif;
-  --pill-gradient: linear-gradient(135deg, var(--lime), var(--accent-soft));
-  --date-gradient: linear-gradient(135deg, var(--accent-soft), var(--ink));
-}
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&family=Poppins:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap');
+  @import url('https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css');
 
-/* ============================================================
-   RESET & BASE
-   ============================================================ */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    @page { size: A4; margin: 0; }
+  html, body { margin: 0; padding: 0; }
 
-@page {
-  size: A4;
-  margin: 0;
-}
+  :root {
+    --ink: #1a2332;
+    --soft: #4a5d6e;
+    --rule: #d0d8e0;
+    --accent: #0d1f2d;
+    --accent-soft: #1a3a4a;
+    --bg-side: #1a3a4a;
+    --lime: #c8e64e;
+    --mono: "JetBrains Mono", Consolas, "SF Mono", "Cascadia Code", ui-monospace, monospace;
+  }
 
-html {
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
+  body {
+    font-family: "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    background: #f5f3ed;
+    -webkit-font-smoothing: antialiased;
+    font-size: 9pt;
+    line-height: 1.36;
+  }
 
-body {
-  font-family: var(--font-body);
-  font-size: 9pt;
-  line-height: 1.45;
-  color: var(--ink);
-  background: var(--bg-page);
-}
+  code {
+    font-family: var(--mono);
+    font-size: 8.2pt;
+    font-weight: 700;
+    background: #e8e6dc;
+    border: 0.4pt solid #d1cec4;
+    padding: 0.2mm 1.2mm;
+    border-radius: 1mm;
+    color: var(--accent-soft);
+    white-space: nowrap;
+  }
 
-/* ============================================================
-   PAGE GRID
-   ============================================================ */
-.page {
-  width: 210mm;
-  min-height: 297mm;
-  display: grid;
-  grid-template-columns: var(--sidebar-width) 1fr;
-  overflow: hidden;
-}
 
-/* ============================================================
-   SIDEBAR
-   ============================================================ */
-.sidebar {
-  background: linear-gradient(180deg, var(--bg-side-start), var(--bg-side-end));
-  color: var(--sidebar-text);
-  padding: 24pt 14pt 20pt 14pt;
-  display: flex;
-  flex-direction: column;
-  gap: 14pt;
-}
+  /* Icons in pills */
+  aside .skill-group ul li i {
+    font-size: 7.5pt;
+    margin-right: 0.4mm;
+    vertical-align: -0.2mm;
+  }
+  aside .contact-icon {
+    display: inline-block;
+    width: 2.8mm;
+    height: 2.8mm;
+    vertical-align: middle;
+    margin-right: 1mm;
+    opacity: 0.8;
+  }
+  .section-icon {
+    display: inline-block;
+    width: 2.5mm;
+    height: 2.5mm;
+    vertical-align: -0.2mm;
+    margin-right: 0.3mm;
+  }
+  main h2 .section-icon {
+    width: 2.8mm;
+    height: 2.8mm;
+    vertical-align: -0.5mm;
+  }
 
-.sidebar a {
-  color: var(--sidebar-text);
-  text-decoration: none;
-  border-bottom: 1px dotted rgba(192, 214, 234, 0.4);
-}
-.sidebar a:hover {
-  color: var(--lime);
-}
+  a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 0.8pt dotted currentColor;
+    padding-bottom: 0.2mm;
+  }
+  a.plain { border-bottom: none; padding-bottom: 0; }
 
-/* Terminal role tag */
-.terminal-tag {
-  font-family: var(--font-mono);
-  font-size: 7pt;
-  color: var(--lime);
-  background: rgba(0, 0, 0, 0.35);
-  border-radius: 4pt;
-  padding: 5pt 8pt;
-  line-height: 1.5;
-  word-break: break-all;
-}
-.terminal-tag .prompt { color: var(--sidebar-text); opacity: 0.7; }
-.terminal-tag .command { color: var(--lime); font-weight: 600; }
-
-/* JSX-style sidebar section headers */
-.sidebar-section-title {
-  font-family: var(--font-mono);
-  font-size: 7.5pt;
-  font-weight: 700;
-  color: var(--lime);
-  letter-spacing: 0.5pt;
-  margin-bottom: 6pt;
-  display: flex;
-  align-items: center;
-  gap: 5pt;
-}
-.sidebar-section-title svg {
-  width: 12pt;
-  height: 12pt;
-  stroke: var(--lime);
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex-shrink: 0;
-}
-
-/* Contact items */
-.contact-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 5pt;
-}
-.contact-item {
-  display: flex;
-  align-items: center;
-  gap: 6pt;
-  font-size: 7.5pt;
-  line-height: 1.4;
-}
-.contact-item svg {
-  width: 10pt;
-  height: 10pt;
-  stroke: var(--lime);
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex-shrink: 0;
-}
-
-/* Skill pills */
-.skill-pills {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4pt;
-}
-.skill-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 3pt;
-  font-family: var(--font-mono);
-  font-size: 6.5pt;
-  font-weight: 500;
-  color: var(--bg-page);
-  background: var(--pill-gradient);
-  padding: 2.5pt 7pt 2.5pt 5pt;
-  border-radius: 10pt;
-}
-.skill-pill i,
-.skill-pill svg {
-  font-size: 9pt;
-  width: 9pt;
-  height: 9pt;
-  flex-shrink: 0;
-}
-.skill-pill svg {
-  fill: var(--bg-page);
-  stroke: none;
-}
-
-/* Sidebar subsection (education, certs, projects, interests) */
-.sidebar-block {
-  margin-bottom: 2pt;
-}
-.sidebar-block-title {
-  font-family: var(--font-mono);
-  font-weight: 600;
-  font-size: 8pt;
-  color: #fff;
-  margin-bottom: 1pt;
-}
-.sidebar-block-sub {
-  font-size: 7.5pt;
-  color: var(--sidebar-text);
-  opacity: 0.85;
-}
-.sidebar-block-date {
-  font-family: var(--font-mono);
-  font-size: 6.5pt;
-  color: var(--lime);
-  opacity: 0.8;
-}
-
-/* Interest tags */
-.interest-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 4pt;
-}
-.interest-tag {
-  font-family: var(--font-mono);
-  font-size: 6.5pt;
-  color: var(--lime);
-  border: 1px solid rgba(221, 255, 85, 0.35);
-  border-radius: 10pt;
-  padding: 2pt 7pt;
-}
-
-/* ============================================================
-   MAIN COLUMN
-   ============================================================ */
-.main {
-  padding: 24pt 22pt 20pt 20pt;
-  display: flex;
-  flex-direction: column;
-  gap: 14pt;
-}
-
-/* Name block */
-.name-block h1 {
-  font-family: var(--font-mono);
-  font-size: 22pt;
-  font-weight: 700;
-  color: var(--ink);
-  letter-spacing: -0.5pt;
-  line-height: 1.1;
-}
-.name-block .subtitle {
-  font-family: var(--font-mono);
-  font-size: 9pt;
-  color: var(--soft);
-  margin-top: 3pt;
-}
-
-/* Summary */
-.summary {
-  font-size: 9pt;
-  line-height: 1.55;
-  color: var(--soft);
-}
-.summary code {
-  font-family: var(--font-mono);
-  font-size: 7.5pt;
-  font-weight: 500;
-  color: var(--ink);
-  background: rgba(192, 214, 234, 0.35);
-  padding: 1pt 4pt;
-  border-radius: 3pt;
-  white-space: nowrap;
-}
-
-/* Full-width rounded pill section headers */
-.section-header {
-  font-family: var(--font-mono);
-  font-size: 8pt;
-  font-weight: 700;
-  color: var(--bg-page);
-  background: linear-gradient(135deg, var(--accent-soft), var(--ink));
-  padding: 4.5pt 12pt;
-  border-radius: 20pt;
-  letter-spacing: 0.8pt;
-  display: flex;
-  align-items: center;
-  gap: 6pt;
-}
-.section-header svg {
-  width: 11pt;
-  height: 11pt;
-  stroke: var(--lime);
-  fill: none;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  flex-shrink: 0;
-}
-
-/* ============================================================
-   TIMELINE
-   ============================================================ */
-.timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-}
-
-.timeline-entry {
-  display: grid;
-  grid-template-columns: 10pt 1fr;
-  gap: 0 10pt;
-  position: relative;
-}
-
-/* Vertical line */
-.timeline-entry .tl-track {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: relative;
-}
-.timeline-entry .tl-track::before {
-  content: '';
-  width: 1.2pt;
-  background: var(--rule);
-  position: absolute;
-  top: 7pt;
-  bottom: 0;
-}
-.timeline-entry:last-child .tl-track::before {
-  display: none;
-}
-
-/* Promotion connector: gradient line between entries at same company */
-.timeline-entry.promotion .tl-track::before {
-  background: linear-gradient(180deg, var(--lime), var(--accent-soft));
-  width: 1.8pt;
-}
-
-/* Dot */
-.tl-dot {
-  width: 7pt;
-  height: 7pt;
-  border-radius: 50%;
-  background: var(--accent-soft);
-  border: 1.5pt solid var(--rule);
-  z-index: 1;
-  margin-top: 2pt;
-  flex-shrink: 0;
-}
-.timeline-entry.promotion .tl-dot {
-  background: var(--lime);
-  border-color: var(--accent-soft);
-}
-
-/* Content */
-.tl-content {
-  padding-bottom: 12pt;
-}
-.tl-header {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: baseline;
-  gap: 5pt;
-  margin-bottom: 3pt;
-}
-.tl-role {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 9pt;
-  color: var(--ink);
-}
-.tl-company {
-  font-family: var(--font-mono);
-  font-size: 8pt;
-  color: var(--soft);
-}
-.tl-company a {
-  color: var(--soft);
-  text-decoration: none;
-  border-bottom: 1px dotted var(--rule);
-}
-.tl-company a:hover {
-  color: var(--ink);
-}
-
-/* Date pills */
-.date-pill {
-  font-family: var(--font-mono);
-  font-size: 6pt;
-  font-weight: 600;
-  color: var(--bg-page);
-  background: var(--date-gradient);
-  padding: 1.5pt 7pt;
-  border-radius: 10pt;
-  white-space: nowrap;
-}
-
-.tl-bullets {
-  list-style: none;
-  margin-top: 3pt;
-}
-.tl-bullets li {
-  position: relative;
-  padding-left: 10pt;
-  font-size: 8.5pt;
-  line-height: 1.5;
-  color: var(--soft);
-  margin-bottom: 2pt;
-}
-.tl-bullets li::before {
-  content: '\25B8';
-  position: absolute;
-  left: 0;
-  color: var(--lime);
-  font-size: 7pt;
-  top: 0.5pt;
-}
-.tl-bullets code {
-  font-family: var(--font-mono);
-  font-size: 7pt;
-  font-weight: 500;
-  color: var(--ink);
-  background: rgba(192, 214, 234, 0.35);
-  padding: 0.5pt 3pt;
-  border-radius: 2pt;
-}
-
-/* ============================================================
-   PRINT
-   ============================================================ */
-@media print {
-  body { background: white; }
   .page {
     width: 210mm;
-    height: 297mm;
-    overflow: hidden;
+    min-height: 297mm;
+    display: grid;
+    grid-template-columns: 70mm 1fr;
+    box-sizing: border-box;
   }
-}
+
+  /* ============ SIDEBAR ============ */
+  aside {
+    background: linear-gradient(180deg, #1a3a4a 0%, #0d1f2d 100%);
+    padding: 11mm 7mm 8mm 11mm;
+    box-sizing: border-box;
+  }
+
+  aside .name-block { margin-bottom: 5mm; }
+  aside h1 {
+    margin: 0;
+    line-height: 0.92;
+    position: relative;
+  }
+  aside h1 .first {
+    display: inline;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 20pt;
+    letter-spacing: 1px;
+    color: #e8e4dc;
+  }
+  aside h1 .last {
+    display: inline;
+    font-family: var(--mono);
+    font-weight: 700;
+    font-size: 20pt;
+    color: #e8e4dc;
+    margin-left: 1.5mm;
+  }
+  aside .role-tag {
+    font-family: var(--mono);
+    font-size: 6.8pt;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+    color: var(--accent-soft);
+    background: #e8e4dc;
+    border: 0.5pt solid #b0c4d4;
+    padding: 2mm 3mm;
+    margin-top: 5mm;
+    border-radius: 1.5mm;
+    text-align: left;
+    line-height: 1.4;
+  }
+  aside .role-tag .chevron {
+    color: var(--accent-soft);
+    font-weight: 700;
+    user-select: none;
+  }
+  aside .role-tag .cmd {
+    font-weight: 600;
+  }
+
+  aside h2 {
+    font-family: var(--mono);
+    font-size: 7.5pt;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    margin: 6mm 0 2.2mm 0;
+    color: #b0c4d4;
+    border-bottom: 1px solid #1a4a60;
+    padding-bottom: 1.2mm;
+  }
+  aside h2::before {
+    content: "< ";
+    color: var(--lime);
+    font-weight: 400;
+  }
+  aside h2::after {
+    content: " />";
+    color: var(--lime);
+    font-weight: 400;
+  }
+
+  aside .contact-line {
+    display: block;
+    font-family: var(--mono);
+    font-size: 7.6pt;
+    color: #e8e4dc;
+    margin-bottom: 1.4mm;
+    word-break: break-word;
+  }
+  aside .contact-line .label {
+    display: inline;
+    color: var(--lime);
+    margin-right: 0.5mm;
+    vertical-align: middle;
+  }
+  aside .contact-item {
+    display: block;
+    margin-bottom: 1.4mm;
+  }
+
+  aside ul { list-style: none; padding: 0; margin: 0; }
+  aside ul li {
+    font-size: 8.5pt;
+    margin-bottom: 1mm;
+    padding-left: 0;
+  }
+  aside .skill-group { margin-bottom: 4mm; }
+  aside .skill-group strong {
+    display: block;
+    font-family: var(--mono);
+    font-size: 6.8pt;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--lime);
+    margin-bottom: 1.4mm;
+  }
+  aside .skill-group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm 1.4mm;
+  }
+  aside .skill-group ul li {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 500;
+    background: linear-gradient(135deg, rgba(200, 230, 78, 0.18), rgba(26, 58, 74, 0.35));
+    border: 0.4pt solid rgba(200, 230, 78, 0.25);
+    color: #e8e4dc;
+    padding: 0.5mm 1.8mm;
+    border-radius: 999px;
+    margin: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  aside .cert {
+    font-size: 8pt;
+    margin-bottom: 3mm;
+    line-height: 1.35;
+  }
+  aside .cert strong { display: block; color: #e8e4dc; }
+  aside .cert span { color: #b0c4d4; font-size: 7pt; font-family: var(--mono); }
+
+  aside .interests-group ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.2mm 1.4mm;
+  }
+  aside .interests-group ul li {
+    display: inline-block;
+    font-size: 6.8pt;
+    font-weight: 500;
+    background: linear-gradient(135deg, rgba(200, 230, 78, 0.18), rgba(26, 58, 74, 0.35));
+    border: 0.4pt solid rgba(200, 230, 78, 0.25);
+    color: #e8e4dc;
+    padding: 0.5mm 1.8mm;
+    border-radius: 999px;
+    margin: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+  }
+
+  /* ============ MAIN COLUMN ============ */
+  main {
+    padding: 9mm 11mm 8mm 11mm;
+    box-sizing: border-box;
+  }
+
+  main .summary {
+    font-size: 9pt;
+    line-height: 1.45;
+    color: var(--ink);
+    margin-bottom: 3mm;
+    padding-bottom: 2.5mm;
+    border-bottom: 1px solid var(--rule);
+    text-align: justify;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  main .summary .lead {
+    font-family: var(--mono);
+    font-size: 11pt;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--accent-soft);
+    display: block;
+    margin-bottom: 2mm;
+    line-height: 1.2;
+    white-space: nowrap;
+  }
+
+  main h2 {
+    font-family: var(--mono);
+    font-size: 8.5pt;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    margin: 0 0 3mm 0;
+    color: var(--accent-soft);
+    background: rgba(26, 58, 74, 0.1);
+    border: 1pt solid rgba(26, 58, 74, 0.45);
+    padding: 2.2mm 4mm;
+    border-radius: 2mm;
+    text-align: center;
+  }
+  main h2::before {
+    content: "< ";
+    font-weight: 400;
+    opacity: 0.6;
+  }
+  main h2::after {
+    content: " />";
+    font-weight: 400;
+    opacity: 0.6;
+  }
+  main h2.projects-header {
+    margin-top: 0;
+  }
+
+  .role {
+    margin-bottom: 2.4mm;
+    page-break-inside: avoid;
+  }
+
+  /* Timeline */
+  .timeline .role {
+    padding-left: 5mm;
+    margin-bottom: 0;
+    padding-bottom: 2.4mm;
+    position: relative;
+    border-left: none;
+  }
+  .timeline .role:last-child {
+    padding-bottom: 0;
+  }
+  /* Dot */
+  .timeline .role::before {
+    content: "";
+    position: absolute;
+    left: 0.3mm;
+    top: 1.8mm;
+    width: 2.2mm;
+    height: 2.2mm;
+    background: var(--accent-soft);
+    border-radius: 50%;
+    z-index: 2;
+  }
+  /* Vertical line segment */
+  .timeline .role::after {
+    content: "";
+    position: absolute;
+    left: 1.1mm;
+    top: 2.9mm;
+    bottom: -2mm;
+    width: 0.8pt;
+    background: var(--rule);
+    z-index: 1;
+  }
+  .timeline .role:last-child::after {
+    display: none;
+  }
+  .timeline .role.connected::after {
+    background: linear-gradient(180deg, #c8e64e, var(--accent-soft));
+    width: 2pt;
+    left: 1mm;
+  }
+  .role-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 4mm;
+    margin-bottom: 0.6mm;
+  }
+  .role-title {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .role-dates {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 6.4pt;
+    font-weight: 600;
+    color: var(--accent-soft);
+    background: linear-gradient(135deg, rgba(200, 230, 78, 0.15), rgba(26, 58, 74, 0.1));
+    border: 0.4pt solid rgba(26, 58, 74, 0.25);
+    padding: 0.6mm 2mm;
+    border-radius: 999px;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
+    white-space: nowrap;
+  }
+  .role-company {
+    font-size: 8.5pt;
+    color: var(--accent-soft);
+    font-style: italic;
+    margin-bottom: 0.8mm;
+  }
+  .role-company b, .role-company strong {
+    font-weight: 600;
+    font-style: italic;
+  }
+  .role ul {
+    margin: 0;
+    padding: 0 0 0 3mm;
+    list-style: none;
+  }
+  .role ul li {
+    font-size: 8.5pt;
+    line-height: 1.34;
+    margin-bottom: 0.4mm;
+    position: relative;
+    padding-left: 3mm;
+    text-align: justify;
+    hyphens: none;
+    -webkit-hyphens: none;
+  }
+  .role ul li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 1.5mm;
+    width: 1.4mm;
+    height: 1.4mm;
+    background: var(--accent-soft);
+    border-radius: 50%;
+  }
+  .role ul li b { color: var(--ink); }
 </style>
 </head>
 <body>
-
 <div class="page">
 
-  <!-- ========================================================
-       SIDEBAR
-       ======================================================== -->
-  <aside class="sidebar">
-
-    <!-- Terminal role tag -->
-    <div class="terminal-tag">
-      <span class="prompt">jane@acme ~ %</span><br>
-      <span class="command">senior_software_engineer</span>
+  <!-- ============ SIDEBAR ============ -->
+  <aside>
+    <div class="name-block">
+      <h1>
+        <span class="first">Jane</span>
+        <span class="last">Doe.</span>
+      </h1>
+      <div class="role-tag"><span class="chevron">jane@acme</span> ~ % <span class="cmd">senior_software_engineer</span></div>
     </div>
 
-    <!-- CONTACT -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Lucide: user icon -->
-        <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-        &lt; CONTACT /&gt;
-      </div>
-      <ul class="contact-list">
-        <li class="contact-item">
-          <!-- Map Pin -->
-          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-          London, UK
-        </li>
-        <li class="contact-item">
-          <!-- Envelope -->
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="22,4 12,13 2,4"/></svg>
-          <a href="mailto:jane@example.com">jane@example.com</a>
-        </li>
-        <li class="contact-item">
-          <!-- Phone -->
-          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.79 19.79 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-          +44 7700 900000
-        </li>
-        <li class="contact-item">
-          <!-- Globe -->
-          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
-          <a href="https://janedoe.dev">janedoe.dev</a>
-        </li>
-        <li class="contact-item">
-          <!-- LinkedIn -->
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-          <a href="https://linkedin.com/in/janedoe">linkedin.com/in/janedoe</a>
-        </li>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> Contact</h2>
+    <div class="contact-line">
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg> London, UK</div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg> <a href="mailto:jane@example.com">jane@example.com</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg> <a class="plain" href="tel:+447700900000">+44 7700 900000</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 000 20 14.5 14.5 0 000-20"/><path d="M2 12h20"/></svg> <a href="https://janedoe.dev">janedoe.dev</a></div>
+      <div class="contact-item"><svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="#c8e64e" stroke-width="2.5" stroke-linecap="round"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-4 0v7h-4v-7a6 6 0 016-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg> <a href="https://linkedin.com/in/janedoe">janedoe</a></div>
+    </div>
+
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg> Capabilities</h2>
+    <div class="skill-group">
+      <strong>Languages</strong>
+      <ul>
+        <li><i class="devicon-python-plain"></i> Python</li>
+        <li><i class="devicon-typescript-plain"></i> TypeScript</li>
+        <li><i class="devicon-azuresqldatabase-plain"></i> SQL</li>
       </ul>
-    </section>
+    </div>
+    <div class="skill-group">
+      <strong>Platforms</strong>
+      <ul>
+        <li><i class="devicon-amazonwebservices-plain-wordmark"></i> AWS</li>
+        <li><i class="devicon-docker-plain"></i> Docker</li>
+        <li><i class="devicon-kubernetes-plain"></i> Kubernetes</li>
+        <li><i class="devicon-postgresql-plain"></i> PostgreSQL</li>
+        <li><i class="devicon-redis-plain"></i> Redis</li>
+        <li><i class="devicon-terraform-plain"></i> Terraform</li>
+      </ul>
+    </div>
+    <div class="skill-group">
+      <strong>DevOps &amp; Methods</strong>
+      <ul>
+        <li><i class="devicon-git-plain"></i> Git</li>
+        <li><svg style="width:2.2mm;height:2.2mm;vertical-align:-0.3mm;margin-right:0.3mm" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 3v6m0 6v6M3 12h6m6 0h6"/></svg> CI/CD</li>
+        <li><i class="devicon-githubactions-plain"></i> GitHub Actions</li>
+        <li><svg style="width:2.2mm;height:2.2mm;vertical-align:-0.3mm;margin-right:0.3mm" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="2"><path d="M17.5 19H9a7 7 0 110-14h8.5M21 12l-4-4m4 4l-4 4"/></svg> Agile/Scrum</li>
+        <li><svg style="width:2.2mm;height:2.2mm;vertical-align:-0.3mm;margin-right:0.3mm" viewBox="0 0 24 24" fill="none" stroke="#e8e4dc" stroke-width="2"><path d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg> Datadog</li>
+        <li><i class="devicon-grafana-plain"></i> Grafana</li>
+      </ul>
+    </div>
 
-    <!-- CAPABILITIES -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Code brackets icon -->
-        <svg viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-        &lt; CAPABILITIES /&gt;
-      </div>
-      <div class="skill-pills">
-        <span class="skill-pill"><i class="devicon-python-plain"></i> Python</span>
-        <span class="skill-pill"><i class="devicon-typescript-plain"></i> TypeScript</span>
-        <span class="skill-pill"><i class="devicon-react-original"></i> React</span>
-        <span class="skill-pill"><i class="devicon-nodejs-plain"></i> Node.js</span>
-        <span class="skill-pill"><i class="devicon-postgresql-plain"></i> PostgreSQL</span>
-        <span class="skill-pill"><i class="devicon-amazonwebservices-plain-wordmark"></i> AWS</span>
-        <span class="skill-pill"><i class="devicon-docker-plain"></i> Docker</span>
-        <span class="skill-pill"><i class="devicon-git-plain"></i> Git</span>
-        <span class="skill-pill">
-          <!-- CI/CD: custom inline SVG (circular arrows) -->
-          <svg viewBox="0 0 24 24" width="9" height="9" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--bg-page);"><polyline points="23 4 23 10 17 10"/><polyline points="1 20 1 14 7 14"/><path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/></svg>
-          CI/CD
-        </span>
-        <span class="skill-pill"><i class="devicon-terraform-plain"></i> Terraform</span>
-      </div>
-    </section>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1 2 3 6 3s6-2 6-3v-5"/></svg> Education</h2>
+    <div class="cert">
+      <strong>BSc Computer Science</strong>
+      <span>University of London &middot; 2013&ndash;2016</span>
+    </div>
 
-    <!-- EDUCATION -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Graduation cap icon -->
-        <svg viewBox="0 0 24 24"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c0 1.657 2.686 3 6 3s6-1.343 6-3v-5"/></svg>
-        &lt; EDUCATION /&gt;
-      </div>
-      <div class="sidebar-block">
-        <div class="sidebar-block-title">BSc Computer Science</div>
-        <div class="sidebar-block-sub">University of London</div>
-        <div class="sidebar-block-date">2013 &ndash; 2016</div>
-      </div>
-    </section>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg> Certifications</h2>
+    <div class="cert">
+      <strong>AWS Solutions Architect</strong>
+      <span>Amazon &middot; 2023</span>
+    </div>
 
-    <!-- CERTIFICATIONS -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Medal icon -->
-        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-        &lt; CERTIFICATIONS /&gt;
-      </div>
-      <div class="sidebar-block">
-        <div class="sidebar-block-title">AWS Solutions Architect</div>
-        <div class="sidebar-block-sub">Amazon Web Services</div>
-        <div class="sidebar-block-date">2023</div>
-      </div>
-    </section>
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Projects</h2>
+    <div class="cert">
+      <strong>DataPipe</strong>
+      <span>Open-source ETL framework<br/><a href="https://datapipe.dev">datapipe.dev</a></span>
+    </div>
+    <div class="cert">
+      <strong>DevDash</strong>
+      <span>Developer productivity dashboard<br/><a href="https://devdash.io">devdash.io</a></span>
+    </div>
 
-    <!-- PROJECTS -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Rocket icon -->
-        <svg viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg>
-        &lt; PROJECTS /&gt;
-      </div>
-      <div class="sidebar-block">
-        <div class="sidebar-block-title">DataPipe</div>
-        <div class="sidebar-block-sub">Open-source ETL framework for streaming data pipelines. 1.2k GitHub stars.</div>
-      </div>
-      <div class="sidebar-block" style="margin-top:6pt;">
-        <div class="sidebar-block-title">DevDash</div>
-        <div class="sidebar-block-sub">Real-time developer metrics dashboard built with React and D3.</div>
-      </div>
-    </section>
-
-    <!-- INTERESTS -->
-    <section>
-      <div class="sidebar-section-title">
-        <!-- Heart icon -->
-        <svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-        &lt; INTERESTS /&gt;
-      </div>
-      <div class="interest-tags">
-        <span class="interest-tag">Open Source</span>
-        <span class="interest-tag">Running</span>
-        <span class="interest-tag">Photography</span>
-        <span class="interest-tag">Coffee</span>
-      </div>
-    </section>
-
+    <h2><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0016.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 002 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg> Interests</h2>
+    <div class="interests-group">
+      <ul>
+        <li>Open Source</li>
+        <li>Running</li>
+        <li>Photography</li>
+        <li>Coffee</li>
+        <li>Bouldering</li>
+        <li>Board Games</li>
+      </ul>
+    </div>
   </aside>
 
-  <!-- ========================================================
-       MAIN COLUMN
-       ======================================================== -->
-  <main class="main">
+  <!-- ============ MAIN COLUMN ============ -->
+  <main>
 
-    <!-- Name -->
-    <div class="name-block">
-      <h1>Jane Doe</h1>
-      <div class="subtitle">Senior Software Engineer</div>
+    <div class="summary">
+      <span class="lead">From monoliths to microservices, built to scale.</span>
+      Full-stack engineer with 8+ years of experience building <code>distributed systems</code> and <code>cloud-native applications</code> across fintech and SaaS. Currently leading backend architecture at <code>Acme Corp</code>, designing scalable <code>microservices</code> and <code>event-driven platforms</code> that serve millions of requests daily. Passionate about <code>developer experience</code>, <code>infrastructure as code</code>, and engineering that ships with confidence.
     </div>
 
-    <!-- Summary -->
-    <p class="summary">
-      Full-stack engineer with 8+ years of experience building
-      <code>high-performance web applications</code> and
-      <code>distributed systems</code>. Passionate about clean architecture,
-      <code>developer experience</code>, and shipping reliable software at scale.
-      Currently leading a platform team of six at
-      <code>Acme Corp</code>, delivering services that handle 50M+ requests per day
-      across <code>AWS</code> infrastructure with <code>TypeScript</code>,
-      <code>React</code>, and <code>Node.js</code>.
-    </p>
-
-    <!-- EXPERIENCE -->
-    <div class="section-header">
-      <!-- Briefcase icon -->
-      <svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
-      &lt; EXPERIENCE /&gt;
-    </div>
+    <h2>Experience</h2>
 
     <div class="timeline">
-
-      <!-- Role 1: Senior Software Engineer at Acme Corp -->
-      <div class="timeline-entry promotion">
-        <div class="tl-track"><div class="tl-dot"></div></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Senior Software Engineer</span>
-            <span class="tl-company">@ <a href="https://acme.example.com">Acme Corp</a></span>
-            <span class="date-pill">Jan 2022 &ndash; Present</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Led migration of monolithic API to event-driven microservices using <code>Node.js</code> and <code>AWS Lambda</code>, reducing p99 latency by 40%.</li>
-            <li>Designed and shipped a shared component library in <code>React</code> and <code>TypeScript</code> adopted by 4 product teams, cutting UI development time by 30%.</li>
-            <li>Established CI/CD pipelines with <code>GitHub Actions</code> and <code>Terraform</code>, enabling 15+ deployments per day with zero-downtime releases.</li>
-          </ul>
+      <div class="role connected">
+        <div class="role-head">
+          <div class="role-title">Senior Software Engineer</div>
+          <div class="role-dates">Jan 2022 &ndash; Present</div>
         </div>
+        <div class="role-company"><b><a href="https://acme.example.com">Acme Corp</a></b> &middot; London</div>
+        <ul>
+          <li>Architected and delivered a <b>microservices migration</b> from a monolithic Django application, reducing deployment times from hours to minutes and enabling independent team scaling.</li>
+          <li>Designed an <b>event-driven data pipeline</b> processing 2M+ events daily using Kafka, Lambda, and DynamoDB, achieving 99.95% uptime across all production services.</li>
+          <li>Led adoption of <b>infrastructure as code</b> with Terraform and GitHub Actions, cutting provisioning time by 80% and eliminating environment drift across staging and production.</li>
+        </ul>
       </div>
 
-      <!-- Role 2: Software Engineer at Acme Corp (promotion) -->
-      <div class="timeline-entry">
-        <div class="tl-track"><div class="tl-dot"></div></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Software Engineer</span>
-            <span class="tl-company">@ <a href="https://acme.example.com">Acme Corp</a></span>
-            <span class="date-pill">Mar 2019 &ndash; Dec 2021</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Built real-time analytics dashboard using <code>React</code>, <code>D3.js</code>, and <code>PostgreSQL</code>, serving 2,000+ daily active users across product and engineering.</li>
-            <li>Implemented end-to-end test suite with <code>Cypress</code> and integrated into CI pipeline, reducing production bugs by 60%.</li>
-          </ul>
+      <div class="role">
+        <div class="role-head">
+          <div class="role-title">Software Engineer</div>
+          <div class="role-dates">Mar 2019 &ndash; Dec 2021</div>
         </div>
+        <div class="role-company"><b><a href="https://acme.example.com">Acme Corp</a></b> &middot; London</div>
+        <ul>
+          <li>Built and maintained <b>RESTful APIs</b> serving 500K+ daily active users, implementing rate limiting, caching layers, and comprehensive integration test suites.</li>
+          <li>Introduced <b>container orchestration</b> with Kubernetes, migrating 12 services from EC2 instances and reducing infrastructure costs by 40%.</li>
+          <li style="border-bottom: 0.5pt solid var(--rule); padding-bottom: 1.5mm; margin-bottom: 1mm;">Mentored <b>three junior engineers</b> through onboarding and code review, establishing team conventions for TypeScript, testing, and PR workflows.</li>
+        </ul>
       </div>
 
-      <!-- Role 3: Junior Developer at Beta Labs -->
-      <div class="timeline-entry">
-        <div class="tl-track"><div class="tl-dot"></div></div>
-        <div class="tl-content">
-          <div class="tl-header">
-            <span class="tl-role">Junior Developer</span>
-            <span class="tl-company">@ <a href="https://betalabs.example.com">Beta Labs</a></span>
-            <span class="date-pill">Aug 2016 &ndash; Feb 2019</span>
-          </div>
-          <ul class="tl-bullets">
-            <li>Developed customer-facing <code>React</code> applications and RESTful APIs in <code>Python</code> (Flask), supporting 500k+ monthly active users.</li>
-            <li>Optimised database queries and indexing strategies in <code>PostgreSQL</code>, achieving 3x improvement in report generation times.</li>
-            <li>Mentored two interns and contributed to internal engineering blog, publishing 5 technical articles on front-end performance.</li>
-          </ul>
+      <div class="role">
+        <div class="role-head">
+          <div class="role-title">Junior Developer</div>
+          <div class="role-dates">Aug 2016 &ndash; Feb 2019</div>
         </div>
+        <div class="role-company"><b><a href="https://betalabs.example.com">Beta Labs</a></b> &middot; London</div>
+        <ul>
+          <li>Developed full-stack features for an internal <b>analytics platform</b> using React and Node.js, supporting business intelligence reporting for 200+ stakeholders.</li>
+          <li>Automated <b>CI/CD pipelines</b> with Jenkins and Docker, reducing release cycles from bi-weekly to daily and cutting QA regression time by 60%.</li>
+          <li>Contributed to an open-source <b>monitoring toolkit</b> adopted by 15+ teams, integrating Prometheus metrics and Grafana dashboards for real-time service health visibility.</li>
+        </ul>
       </div>
+    </div>
 
-    </div><!-- /timeline -->
+    <h2 class="projects-header"><svg class="section-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 00-2.91-.09z"/><path d="M12 15l-3-3a22 22 0 012-3.95A12.88 12.88 0 0122 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 01-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></svg> Projects</h2>
+
+    <div class="role">
+      <div class="role-head">
+        <div class="role-title">DataPipe</div>
+        <div class="role-dates">Mar 2021 &ndash; Present</div>
+      </div>
+      <div class="role-company">Creator &middot; <a href="https://datapipe.dev">datapipe.dev</a></div>
+      <ul>
+        <li>Built and maintain an open-source <b>ETL framework</b> in Python with plugin-based connectors for PostgreSQL, S3, and BigQuery, reaching 1,200+ GitHub stars and 50+ contributors.</li>
+        <li>Designed a <b>declarative pipeline DSL</b> that reduces boilerplate by 70% compared to raw Airflow DAGs, with built-in schema validation and lineage tracking.</li>
+      </ul>
+    </div>
 
   </main>
-
-</div><!-- /page -->
-
+</div>
 </body>
 </html>

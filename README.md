@@ -1,28 +1,42 @@
-# Resume Builder
+<div align="center">
 
-**A code-themed, editorial CV/resume builder that outputs a self-contained HTML file and exports to pixel-perfect PDF via Chrome headless.**
+# `< Resume Builder />`
 
-No build tools. No JavaScript frameworks. Just one HTML file, a shell script, and beautiful typography.
+**A code-themed, editorial CV/resume builder.**
+**One HTML file. One shell command. Pixel-perfect PDF.**
 
-![Screenshot placeholder](examples/screenshot.png)
+[![License: MIT](https://img.shields.io/badge/License-MIT-DDFF55.svg?style=flat-square)](LICENSE)
+[![HTML](https://img.shields.io/badge/HTML-CSS-11425D.svg?style=flat-square&logo=html5&logoColor=white)](templates/source.html)
+[![Chrome](https://img.shields.io/badge/Export-Chrome_Headless-11425D.svg?style=flat-square&logo=googlechrome&logoColor=white)](scripts/export.sh)
+[![Zero Dependencies](https://img.shields.io/badge/Dependencies-Zero-DDFF55.svg?style=flat-square)](#)
+
+<br>
+
+<img src="examples/screenshot.png" alt="Resume Builder screenshot" width="680">
+
+<br>
+
+*No build tools. No JavaScript frameworks. Just one HTML file, a shell script, and beautiful typography.*
+
+</div>
 
 ---
 
 ## Features
 
-- **Two-column editorial layout**: 70mm dark sidebar + flexible main column on A4
-- **Terminal-style role tag**: `hal@company ~ % senior_data_engineer`
-- **JSX-style section headers**: `< EXPERIENCE />` as full-width rounded pills
-- **Vertical timeline** with dots, connector lines, and gradient promotions (lime to navy)
-- **Inline `<code>` blocks** in summary text for keyword highlighting
-- **Skill pills** with gradient backgrounds and brand icons (Devicon CDN)
-- **Date range pills** with gradient fills
-- **Contact section** with inline SVG Lucide-style icons
-- **Monospace-heavy typography** (JetBrains Mono + Inter)
-- **Dotted underlines** on clickable links
-- **Three themes included**: Neptune+Lime (default), Burgundy, Noir
-- **Zero dependencies**: pure HTML + CSS, no JavaScript required
-- **Chrome headless PDF export**: one command, pixel-perfect output
+| | |
+|---|---|
+| `>_ Terminal role tag` | Your name as a shell prompt: `jane@acme ~ % senior_software_engineer` |
+| `< JSX Headers />` | Sidebar sections styled as React components |
+| `{ }` Code blocks | Inline keyword highlighting in your summary |
+| Timeline | Vertical dots with gradient connectors for promotions |
+| Skill pills | Gradient backgrounds with Devicon brand icons |
+| Date pills | Lime-to-navy gradient date range badges |
+| Contact icons | Lucide-style SVG icons for location, email, phone, web, LinkedIn |
+| Themes | Neptune+Lime (default), Burgundy, Noir |
+| Export | One-command Chrome headless PDF, pixel-perfect |
+
+**Built with:** `HTML` `CSS` `Google Fonts` `Devicon` `Chrome Headless`
 
 ## Quick Start
 
