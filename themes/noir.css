@@ -10,13 +10,13 @@
 
 :root {
   /* ── Typography colours ── */
-  --ink: #E8E8E8;                   /* Near-white — headings */
-  --soft: #A0A8B0;                  /* Cool grey — body text */
-  --rule: #3A3F47;                  /* Dark slate — borders, timeline */
+  --ink: #E8E8E8;                   /* Near-white: headings */
+  --soft: #A0A8B0;                  /* Cool grey: body text */
+  --rule: #3A3F47;                  /* Dark slate: borders, timeline */
 
   /* ── Accent palette ── */
-  --accent-soft: #1A1E24;           /* Deep charcoal — dark accent */
-  --lime: #00D4FF;                  /* Electric cyan — highlight accent */
+  --accent-soft: #1A1E24;           /* Deep charcoal: dark accent */
+  --lime: #00D4FF;                  /* Electric cyan: highlight accent */
 
   /* ── Backgrounds ── */
   --bg-page: #14171C;              /* Near-black page */

@@ -10,12 +10,12 @@
 
 :root {
   /* ── Typography colours ── */
-  --ink: #2C1810;                   /* Deep espresso — headings */
-  --soft: #5C4033;                  /* Warm brown — body text */
-  --rule: #D4C4B0;                  /* Latte — borders, timeline */
+  --ink: #2C1810;                   /* Deep espresso: headings */
+  --soft: #5C4033;                  /* Warm brown: body text */
+  --rule: #D4C4B0;                  /* Latte: borders, timeline */
 
   /* ── Accent palette ── */
-  --accent-soft: #722F37;           /* Burgundy — primary accent */
+  --accent-soft: #722F37;           /* Burgundy: primary accent */
   --lime: #722F37;                  /* Re-mapped: accent colour for pills */
 
   /* ── Backgrounds ── */

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # ──────────────────────────────────────────────────────────────
-# export.sh — Render source.html to PDF via Chrome headless
+# export.sh: Render source.html to PDF via Chrome headless
 # Usage:  ./scripts/export.sh [input.html] [output.pdf]
 # ──────────────────────────────────────────────────────────────
 set -euo pipefail

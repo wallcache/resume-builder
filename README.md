@@ -10,9 +10,9 @@ No build tools. No JavaScript frameworks. Just one HTML file, a shell script, an
 
 ## Features
 
-- **Two-column editorial layout** -- 70mm dark sidebar + flexible main column on A4
-- **Terminal-style role tag** -- `hal@company ~ % senior_data_engineer`
-- **JSX-style section headers** -- `< EXPERIENCE />` as full-width rounded pills
+- **Two-column editorial layout**: 70mm dark sidebar + flexible main column on A4
+- **Terminal-style role tag**: `hal@company ~ % senior_data_engineer`
+- **JSX-style section headers**: `< EXPERIENCE />` as full-width rounded pills
 - **Vertical timeline** with dots, connector lines, and gradient promotions (lime to navy)
 - **Inline `<code>` blocks** in summary text for keyword highlighting
 - **Skill pills** with gradient backgrounds and brand icons (Devicon CDN)
@@ -20,9 +20,9 @@ No build tools. No JavaScript frameworks. Just one HTML file, a shell script, an
 - **Contact section** with inline SVG Lucide-style icons
 - **Monospace-heavy typography** (JetBrains Mono + Inter)
 - **Dotted underlines** on clickable links
-- **Three themes included** -- Neptune+Lime (default), Burgundy, Noir
-- **Zero dependencies** -- pure HTML + CSS, no JavaScript required
-- **Chrome headless PDF export** -- one command, pixel-perfect output
+- **Three themes included**: Neptune+Lime (default), Burgundy, Noir
+- **Zero dependencies**: pure HTML + CSS, no JavaScript required
+- **Chrome headless PDF export**: one command, pixel-perfect output
 
 ## Quick Start
 
@@ -52,10 +52,10 @@ chmod +x scripts/export.sh
 
 Open `templates/source.html` and replace the placeholder content:
 
-1. **Sidebar** -- Update contact details, skills, education, certifications, projects, and interests
-2. **Main column** -- Update name, title, summary, and experience timeline
-3. **Terminal tag** -- Change `jane@acme ~ %` to your own prompt
-4. **Skill pills** -- Add/remove skills and swap icon classes
+1. **Sidebar**: Update contact details, skills, education, certifications, projects, and interests
+2. **Main column**: Update name, title, summary, and experience timeline
+3. **Terminal tag**: Change `jane@acme ~ %` to your own prompt
+4. **Skill pills**: Add/remove skills and swap icon classes
 
 ### Applying a Theme
 
@@ -217,7 +217,7 @@ The `--virtual-time-budget=15000` flag ensures web fonts from Google Fonts CDN a
 ```
 resume-builder/
   templates/
-    source.html        # Main template — edit this
+    source.html        # Main template: edit this
   themes/
     neptune-lime.css   # Default theme variables
     burgundy.css       # Warm editorial theme
@@ -233,10 +233,10 @@ resume-builder/
 
 ## Credits
 
-- **[Devicon](https://devicon.dev/)** -- Brand icons for programming languages and tools
-- **[Lucide](https://lucide.dev/)** -- Design language for the stroke SVG icons
-- **[Google Fonts](https://fonts.google.com/)** -- JetBrains Mono and Inter typefaces
-- **[Chrome Headless](https://developer.chrome.com/docs/chromium/headless)** -- PDF rendering engine
+- **[Devicon](https://devicon.dev/)**: Brand icons for programming languages and tools
+- **[Lucide](https://lucide.dev/)**: Design language for the stroke SVG icons
+- **[Google Fonts](https://fonts.google.com/)**: JetBrains Mono and Inter typefaces
+- **[Chrome Headless](https://developer.chrome.com/docs/chromium/headless)**: PDF rendering engine
 
 ## License
 
