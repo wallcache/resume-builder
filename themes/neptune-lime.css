@@ -1,0 +1,48 @@
+/* ================================================================
+   Theme: Neptune + Lime
+   The default dark-sidebar editorial theme.
+   ================================================================
+   Sidebar: deep navy gradient with lime accents
+   Main:    warm cream background with ink typography
+   Pills:   lime-to-navy gradient
+   ================================================================ */
+
+:root {
+  /* ── Typography colours ── */
+  --ink: #002233;                   /* Midnight Dreams — headings, strong text */
+  --soft: #3d5a6e;                  /* Body text, secondary copy */
+  --rule: #C0D6EA;                  /* Pacific Panorama — borders, timeline */
+
+  /* ── Accent palette ── */
+  --accent-soft: #11425D;           /* Neptune's Wrath — dark accent */
+  --lime: #DDFF55;                  /* Isotonic Water — highlight accent */
+
+  /* ── Backgrounds ── */
+  --bg-page: #F6F2E8;              /* Cheviot — warm cream page */
+  --bg-side-start: #11425D;        /* Sidebar gradient start */
+  --bg-side-end: #002233;          /* Sidebar gradient end */
+
+  /* ── Sidebar text ── */
+  --sidebar-text: #C0D6EA;         /* Light readable text on dark bg */
+  --sidebar-heading: #DDFF55;      /* Section headings in lime */
+
+  /* ── Layout ── */
+  --sidebar-width: 70mm;
+
+  /* ── Fonts ── */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* ── Gradients ── */
+  --pill-gradient: linear-gradient(135deg, var(--lime), var(--accent-soft));
+  --date-gradient: linear-gradient(135deg, var(--accent-soft), var(--ink));
+}
+
+body {
+  background: var(--bg-page);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, var(--bg-side-start), var(--bg-side-end));
+  color: var(--sidebar-text);
+}

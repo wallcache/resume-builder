@@ -1,0 +1,77 @@
+/* ================================================================
+   Theme: Burgundy
+   A warm editorial theme with a light cream sidebar and
+   burgundy/wine accents.
+   ================================================================
+   Sidebar: warm parchment with burgundy headings
+   Main:    soft white background with charcoal typography
+   Pills:   burgundy-to-dark gradient
+   ================================================================ */
+
+:root {
+  /* ── Typography colours ── */
+  --ink: #2C1810;                   /* Deep espresso — headings */
+  --soft: #5C4033;                  /* Warm brown — body text */
+  --rule: #D4C4B0;                  /* Latte — borders, timeline */
+
+  /* ── Accent palette ── */
+  --accent-soft: #722F37;           /* Burgundy — primary accent */
+  --lime: #722F37;                  /* Re-mapped: accent colour for pills */
+
+  /* ── Backgrounds ── */
+  --bg-page: #FEFCF8;              /* Warm white page */
+  --bg-side-start: #F5EDE3;        /* Parchment sidebar start */
+  --bg-side-end: #EDE3D5;          /* Parchment sidebar end */
+
+  /* ── Sidebar text ── */
+  --sidebar-text: #5C4033;         /* Warm brown on light bg */
+  --sidebar-heading: #722F37;      /* Burgundy headings */
+
+  /* ── Layout ── */
+  --sidebar-width: 70mm;
+
+  /* ── Fonts ── */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* ── Gradients ── */
+  --pill-gradient: linear-gradient(135deg, #722F37, #4A1A20);
+  --date-gradient: linear-gradient(135deg, #722F37, #2C1810);
+}
+
+body {
+  background: var(--bg-page);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, var(--bg-side-start), var(--bg-side-end));
+  color: var(--sidebar-text);
+}
+
+/* Override sidebar link colour for light background */
+.sidebar a {
+  color: var(--accent-soft);
+  border-bottom-color: rgba(114, 47, 55, 0.3);
+}
+
+/* Skill pills need light text on dark burgundy background */
+.skill-pill {
+  color: #FEFCF8;
+}
+
+/* Interest tags adapt to burgundy */
+.interest-tag {
+  color: var(--accent-soft);
+  border-color: rgba(114, 47, 55, 0.35);
+}
+
+/* Contact icons in burgundy */
+.contact-item svg {
+  stroke: var(--accent-soft);
+}
+.sidebar-section-title svg {
+  stroke: var(--accent-soft);
+}
+.section-header svg {
+  stroke: #F5EDE3;
+}

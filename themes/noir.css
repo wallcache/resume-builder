@@ -1,0 +1,106 @@
+/* ================================================================
+   Theme: Noir
+   A dark-mode editorial theme. Near-black backgrounds with
+   cool grey typography and electric blue accents.
+   ================================================================
+   Sidebar: charcoal-to-black gradient with cyan highlights
+   Main:    dark charcoal with light grey text
+   Pills:   cyan-to-charcoal gradient
+   ================================================================ */
+
+:root {
+  /* ── Typography colours ── */
+  --ink: #E8E8E8;                   /* Near-white — headings */
+  --soft: #A0A8B0;                  /* Cool grey — body text */
+  --rule: #3A3F47;                  /* Dark slate — borders, timeline */
+
+  /* ── Accent palette ── */
+  --accent-soft: #1A1E24;           /* Deep charcoal — dark accent */
+  --lime: #00D4FF;                  /* Electric cyan — highlight accent */
+
+  /* ── Backgrounds ── */
+  --bg-page: #14171C;              /* Near-black page */
+  --bg-side-start: #1A1E24;        /* Sidebar gradient start */
+  --bg-side-end: #0D0F12;          /* Sidebar gradient end */
+
+  /* ── Sidebar text ── */
+  --sidebar-text: #A0A8B0;         /* Cool grey on dark bg */
+  --sidebar-heading: #00D4FF;      /* Cyan headings */
+
+  /* ── Layout ── */
+  --sidebar-width: 70mm;
+
+  /* ── Fonts ── */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-body: 'Inter', sans-serif;
+
+  /* ── Gradients ── */
+  --pill-gradient: linear-gradient(135deg, #00D4FF, #1A1E24);
+  --date-gradient: linear-gradient(135deg, #1A1E24, #0D0F12);
+}
+
+body {
+  background: var(--bg-page);
+}
+
+.sidebar {
+  background: linear-gradient(180deg, var(--bg-side-start), var(--bg-side-end));
+  color: var(--sidebar-text);
+}
+
+/* Code blocks on dark background */
+.summary code,
+.tl-bullets code {
+  color: #00D4FF;
+  background: rgba(0, 212, 255, 0.1);
+}
+
+/* Section header pill */
+.section-header {
+  background: linear-gradient(135deg, #1A1E24, #0D0F12);
+  border: 1px solid var(--rule);
+}
+
+/* Date pill border for visibility on dark bg */
+.date-pill {
+  border: 1px solid var(--rule);
+}
+
+/* Terminal tag */
+.terminal-tag {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--rule);
+}
+
+/* Sidebar links */
+.sidebar a {
+  color: var(--sidebar-text);
+  border-bottom-color: rgba(0, 212, 255, 0.3);
+}
+.sidebar a:hover {
+  color: var(--lime);
+}
+
+/* Timeline dot */
+.tl-dot {
+  background: var(--rule);
+  border-color: #A0A8B0;
+}
+.timeline-entry.promotion .tl-dot {
+  background: #00D4FF;
+  border-color: var(--rule);
+}
+
+/* Timeline connector */
+.timeline-entry .tl-track::before {
+  background: var(--rule);
+}
+.timeline-entry.promotion .tl-track::before {
+  background: linear-gradient(180deg, #00D4FF, var(--rule));
+}
+
+/* Company link colour */
+.tl-company a {
+  color: var(--soft);
+  border-bottom-color: var(--rule);
+}

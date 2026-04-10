@@ -1,0 +1,20 @@
+# Build output
+output.pdf
+*.pdf
+
+# macOS
+.DS_Store
+
+# Node (if extending with build tools)
+node_modules/
+package-lock.json
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+Thumbs.db
